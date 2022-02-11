@@ -1,12 +1,14 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { themeChange } from "theme-change";
 import Typewriter from 'typewriter-effect'
 import Switch from 'react-switch'
 import monitorIcon from '../assets/images/laptopIcon.svg'
 import { FaMoon, FaSun } from 'react-icons/fa'
+import ThemeContext from '../context/theme/ThemeContext'
 
-function Home({handleClick}) {
-  const [theme, setTheme] = useState('')
+function Home() {
+  const { theme, changeTheme } = useContext(ThemeContext)
+  
   const [checked, setChecked] = useState(false)
   
   // Set themeChange to false, required for react project per documentation
@@ -16,10 +18,6 @@ function Home({handleClick}) {
 
   // Check if use has a theme stored and set toggle switch to correct side.
   useEffect(() => {
-    if(localStorage.getItem('theme')) {
-      const storedTheme = localStorage.getItem('theme')
-      setTheme(storedTheme)
-    }
     if(theme === 'dark') {
       console.log(theme)
       setChecked(true)
@@ -29,15 +27,12 @@ function Home({handleClick}) {
   // Slide toggle on click
   const onChange = (nextChecked) => {
     setChecked(nextChecked)
+    if(theme === 'cupcake') {
+      changeTheme('dark')
+    } else {
+      changeTheme('cupcake')
+    }
   }
-
-  // const handleClick = () => {
-  //   if(theme === 'cupcake') {
-  //     setTheme('dark')
-  //   } else {
-  //     setTheme('cupcake')
-  //   }
-  // }
 
   return (
     <section id='home'>
@@ -62,7 +57,7 @@ function Home({handleClick}) {
             />
           </h1>
           <div className="flex justify-center items-start max-h-min">
-            <button data-toggle-theme="dark,cupcake" data-act-class="ACTIVECLASS" className='max-w-fit max-h-fit' onClick={handleClick}>
+            <button data-toggle-theme="dark,cupcake" data-act-class="ACTIVECLASS" className='max-w-fit max-h-fit'>
               <Switch 
                 onChange={onChange}
                 checked={checked}
@@ -71,7 +66,7 @@ function Home({handleClick}) {
                 width={80}
                 className='react-switch'
                 offColor='#65C3C8'
-                onColor='793EF9'
+                onColor='#793EF9'
                 uncheckedIcon={
                   <div style={{
                     display: 'flex',
