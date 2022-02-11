@@ -25,3 +25,19 @@
   height: auto;
   width: auto\9;
 }
+
+.alternate-bg-dark {
+  background-color: #6b7280;
+}
+
+.alternate-bg-cupcake {
+  background-color: #f1f5f9;;
+}
+
+.alternate-bg-dark div.about-content {
+  background-color: #4b5563;
+}
+
+.alternate-bg-cupcake div.about-content {
+  background-color: #e2e8f0;
+}

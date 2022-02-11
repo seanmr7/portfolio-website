@@ -4,6 +4,7 @@ import themeReducer from './ThemeReducer'
 const ThemeContext = createContext()
 
 export const ThemeProvider = ({children}) => {
+  // Set initial state from local storage or as empty string
   let initialState
   if(localStorage.getItem('theme')) {
     initialState = {
