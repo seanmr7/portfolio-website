@@ -5,7 +5,7 @@ import Switch from 'react-switch'
 import monitorIcon from '../assets/images/laptopIcon.svg'
 import { FaMoon, FaSun } from 'react-icons/fa'
 
-function Home() {
+function Home({handleClick}) {
   const [theme, setTheme] = useState('')
   const [checked, setChecked] = useState(false)
   
@@ -31,6 +31,14 @@ function Home() {
     setChecked(nextChecked)
   }
 
+  // const handleClick = () => {
+  //   if(theme === 'cupcake') {
+  //     setTheme('dark')
+  //   } else {
+  //     setTheme('cupcake')
+  //   }
+  // }
+
   return (
     <section id='home'>
       <main className="container mx-auto">
@@ -53,40 +61,42 @@ function Home() {
               }}
             />
           </h1>
-          <button data-toggle-theme="dark,cupcake" data-act-class="ACTIVECLASS">
-            <Switch 
-              onChange={onChange}
-              checked={checked}
-              handleDiameter={35}
-              height={35}
-              width={80}
-              className='react-switch'
-              offColor='#65C3C8'
-              onColor='793EF9'
-              uncheckedIcon={
-                <div style={{
-                  display: 'flex',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                  height: '100%',
-                  fontSize: 20,
-                }}>
-                  <FaMoon />
-                </div>
-              }
-              checkedIcon={
-                <div style={{
-                  display: 'flex',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                  height: '100%',
-                  fontSize: 20,
-                }}>
-                  <FaSun />
-                </div>
-              }
-            />
-          </button>
+          <div className="flex justify-center items-start max-h-min">
+            <button data-toggle-theme="dark,cupcake" data-act-class="ACTIVECLASS" className='max-w-fit max-h-fit' onClick={handleClick}>
+              <Switch 
+                onChange={onChange}
+                checked={checked}
+                handleDiameter={35}
+                height={35}
+                width={80}
+                className='react-switch'
+                offColor='#65C3C8'
+                onColor='793EF9'
+                uncheckedIcon={
+                  <div style={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    height: '100%',
+                    fontSize: 20,
+                  }}>
+                    <FaMoon />
+                  </div>
+                }
+                checkedIcon={
+                  <div style={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    height: '100%',
+                    fontSize: 20,
+                  }}>
+                    <FaSun />
+                  </div>
+                }
+              />
+            </button>
+          </div>
         </div>
       </main>
     </section>
