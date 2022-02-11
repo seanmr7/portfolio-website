@@ -1,6 +1,8 @@
 import AboutImage from '../assets/images/aboutImage.jpeg'
 
 function About() {
+  
+
   return (
     <section id='about' style={{backgroundColor: 'white'}}>
       <main className='mx-auto'>
