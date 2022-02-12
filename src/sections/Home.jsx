@@ -5,9 +5,10 @@ import Switch from 'react-switch'
 import monitorIcon from '../assets/images/laptopIcon.svg'
 import { FaMoon, FaSun } from 'react-icons/fa'
 import ThemeContext from '../context/theme/ThemeContext'
+import { changeTheme } from "../context/theme/ThemeActions";
 
 function Home() {
-  const { theme, changeTheme } = useContext(ThemeContext)
+  const { theme, dispatch } = useContext(ThemeContext)
   
   const [checked, setChecked] = useState(false)
   
@@ -25,8 +26,16 @@ function Home() {
   const onChange = (nextChecked) => {
     setChecked(nextChecked)
     if(theme === 'cupcake') {
+      dispatch({
+        type: 'CHANGE_THEME',
+        payload: 'dark',
+      })
       changeTheme('dark')
     } else {
+      dispatch({
+        type: 'CHANGE_THEME',
+        payload: 'cupcake',
+      })
       changeTheme('cupcake')
     }
   }

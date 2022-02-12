@@ -18,32 +18,9 @@ export const ThemeProvider = ({children}) => {
 
   const [state, dispatch] = useReducer(themeReducer, initialState)
 
-  const setThemeOnLoad = () => {
-    document.addEventListener('DOMContentLoaded', () => {
-      if(localStorage.getItem('theme')) {
-        document.querySelector('[data-theme]').setAttribute('data-theme', initialState.theme)
-      }
-    })
-  }
-
-  const changeTheme = (theme) => {
-    dispatch({
-      type: 'CHANGE_THEME',
-      payload: theme,
-    })
-    const element = document.querySelector('[data-theme]')
-    element.setAttribute('data-theme', theme)
-    storeTheme(theme)
-  }
-
-  const storeTheme = (theme) => {
-    localStorage.setItem('theme', theme)
-  }
-
   return <ThemeContext.Provider value={{
     ...state,
-    changeTheme,
-    setThemeOnLoad
+    dispatch,
   }}>
     {children}
   </ThemeContext.Provider>

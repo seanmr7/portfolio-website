@@ -5,11 +5,12 @@ import Projects from "../sections/Projects";
 import Skills from "../sections/Skills";
 import ContactMe from "../sections/ContactMe";
 import ThemeContext from "../context/theme/ThemeContext";
+import { setThemeOnLoad } from "../context/theme/ThemeActions";
 
 function LandingPage() {
-  const { theme, setThemeOnLoad } = useContext(ThemeContext)
+  const { theme } = useContext(ThemeContext)
   useEffect(() => {
-    setThemeOnLoad()
+    setThemeOnLoad(theme)
   }, [])
 
   return (
