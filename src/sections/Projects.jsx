@@ -1,11 +1,10 @@
 function Projects() {
   return (
-    <div>
-      <main className='mx-auto container'>
-        
+    <section id='projects'>
+      <main className='mx-auto'>
+
       </main>
-      Projects
-    </div>
+    </section>
   )
 }
 

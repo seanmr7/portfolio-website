@@ -1,5 +1,5 @@
 import { useEffect, useState, useContext } from "react";
-import { themeChange } from "theme-change";
+// import { themeChange } from "theme-change";
 import Typewriter from 'typewriter-effect'
 import Switch from 'react-switch'
 import monitorIcon from '../assets/images/laptopIcon.svg'
@@ -12,14 +12,11 @@ function Home() {
   const [checked, setChecked] = useState(false)
   
   // Set themeChange to false, required for react project per documentation
-  useEffect(() => {
-    themeChange(false)
-  }, [])
+
 
   // Check if use has a theme stored and set toggle switch to correct side.
   useEffect(() => {
     if(theme === 'dark') {
-      console.log(theme)
       setChecked(true)
     }
   }, [theme])
@@ -38,7 +35,7 @@ function Home() {
     <section id='home'>
       <main className="container mx-auto">
         <div className='flex flex-col justify-center content-between home-section-div'>
-          <div className='container mx-auto flex justify-center my-7'>
+          <div className='container image-container mx-auto flex justify-center my-7'>
             <img src={monitorIcon} alt='Monitor with code on screen' className="home-section-img" />
           </div>
           <h1 className="flex justify-center text-5xl pb-5 Typewriter_wrapper">
@@ -57,9 +54,10 @@ function Home() {
             />
           </h1>
           <div className="flex justify-center items-start max-h-min">
-            <button data-toggle-theme="dark,cupcake" data-act-class="ACTIVECLASS" className='max-w-fit max-h-fit'>
               <Switch 
                 onChange={onChange}
+                data-toggle-theme='dark,cupcake'
+                data-act-class='ACTIVECLASS'
                 checked={checked}
                 handleDiameter={35}
                 height={35}
@@ -90,7 +88,6 @@ function Home() {
                   </div>
                 }
               />
-            </button>
           </div>
         </div>
       </main>

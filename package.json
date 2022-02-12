@@ -12,7 +12,6 @@
     "react-icons": "^4.3.1",
     "react-scripts": "5.0.0",
     "react-switch": "^6.0.0",
-    "theme-change": "^2.0.2",
     "typewriter-effect": "^2.18.2",
     "web-vitals": "^2.1.4"
   },
