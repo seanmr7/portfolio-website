@@ -1,8 +1,5 @@
-import { useContext, useEffect } from 'react'
-// import ThemeContext from '../context/theme/ThemeContext'
+import { useContext } from 'react'
 import ProjectContext from '../context/project/ProjectContext'
-import MovieList from '../assets/images/demos/movie-list.png'
-import LoanCalc from '../assets/images/demos/Loan-calculator.png'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation } from 'swiper'
 import SwiperSlideItem from '../components/SwiperSlideItem'
@@ -12,7 +9,6 @@ import 'swiper/css'
 import 'swiper/css/navigation'
 
 function Projects() {
-  // const { theme } = useContext(ThemeContext)
   const { repos } = useContext(ProjectContext)
 
   return (
@@ -32,34 +28,8 @@ function Projects() {
                   <SwiperSlideItem key={repo.id} repo={repo} />
                 </SwiperSlide>
               ))}
-              {/* <SwiperSlide>
-                <div className={`card-body mx-auto w-3/5 alternate-bg-${theme} rounded-md shadow-xl`}>
-                  <img src={MovieList} alt='' />
-                  <p className='text-center md:text-xl my-2'>Movie List</p>
-                  <p className='md:text-lg text-center'>Short description of the basic functionality of the project</p>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-              <a href='https://google.com' target='_blank' rel='noreferrer'>
-                <div className={`card-body mx-auto w-3/5 alternate-bg-${theme} rounded-md shadow-xl`}>
-                    <img src={LoanCalc} alt='' className='h-2/5' />
-                  <p className='text-center text-xl my-2'>Movie List</p>
-                  <p className='text-lg text-center'>Short description of the basic functionality of the project</p>
-                </div>
-              </a>
-              </SwiperSlide>
-              <SwiperSlide>
-              <div className={`card-body mx-auto w-3/5 alternate-bg-${theme} rounded-md shadow-xl`}>
-                  <figure>
-                    <img src={MovieList} alt='' className='h-2/5' />
-                  </figure>
-                  <p className='text-center text-xl my-2'>Movie List</p>
-                  <p className='text-lg text-center'>Short description of the basic functionality of the project</p>
-                </div>
-              </SwiperSlide> */}
             </Swiper>
           </div>
-
         </div>
       </main>
     </section>

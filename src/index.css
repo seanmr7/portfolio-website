@@ -20,6 +20,10 @@
   min-height: 45vh;
 }
 
+.skills-section-div {
+  min-height: 30vh;
+}
+
 .projects-section-div {
   min-height: 100%;
 }
