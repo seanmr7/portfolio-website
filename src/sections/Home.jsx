@@ -25,7 +25,7 @@ function Home() {
   // Slide toggle on click
   const onChange = (nextChecked) => {
     setChecked(nextChecked)
-    if(theme === 'cupcake') {
+    if(theme === 'bumblebee') {
       dispatch({
         type: 'CHANGE_THEME',
         payload: 'dark',
@@ -34,9 +34,9 @@ function Home() {
     } else {
       dispatch({
         type: 'CHANGE_THEME',
-        payload: 'cupcake',
+        payload: 'bumblebee',
       })
-      changeTheme('cupcake')
+      changeTheme('bumblebee')
     }
   }
 
@@ -65,7 +65,7 @@ function Home() {
           <div className="flex justify-center items-start max-h-min">
               <Switch 
                 onChange={onChange}
-                data-toggle-theme='dark,cupcake'
+                data-toggle-theme='dark,bumblebee'
                 data-act-class='ACTIVECLASS'
                 checked={checked}
                 handleDiameter={35}

@@ -8,8 +8,8 @@ function Skills() {
     <section id='skills' className={`alternate-bg-${theme}`}>
       <main className='mx-auto'>
         <div className='container flex flex-col skills-section-div'>
-          <h1 className='text-2xl my-6 mx-auto'>Skills</h1>
-          <div className='container flex justify-self-center self-center justify-around flex-wrap mt-16 md:flex-nowrap'>
+          <h1 className='text-2xl my-6 mx-auto text-center'>Skills</h1>
+          <div className='container flex justify-self-center self-center justify-around flex-wrap mt-10 md:flex-nowrap'>
             <div className='skill-container mx-3'>
               <FaHtml5 className='text-5xl mb-3' />
               <p className='text-md'>HTML</p>
