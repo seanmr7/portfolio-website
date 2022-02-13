@@ -6,10 +6,14 @@ import Skills from "../sections/Skills";
 import ContactMe from "../sections/ContactMe";
 import ThemeContext from "../context/theme/ThemeContext";
 import { setThemeOnLoad } from "../context/theme/ThemeActions";
+import ProjectContext from "../context/project/ProjectContext";
 
 function LandingPage() {
   const { theme } = useContext(ThemeContext)
+  const { getRepos } = useContext(ProjectContext)
+
   useEffect(() => {
+    getRepos()
     setThemeOnLoad(theme)
   }, [])
 
