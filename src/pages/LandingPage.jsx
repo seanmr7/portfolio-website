@@ -7,6 +7,8 @@ import ContactMe from "../sections/ContactMe";
 import ThemeContext from "../context/theme/ThemeContext";
 import { setThemeOnLoad } from "../context/theme/ThemeActions";
 import ProjectContext from "../context/project/ProjectContext";
+import { ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 function LandingPage() {
   const { theme } = useContext(ThemeContext)
@@ -24,6 +26,10 @@ function LandingPage() {
       <Projects />
       <Skills />
       <ContactMe />
+
+      <ToastContainer 
+        theme={theme === 'dark' ? 'dark' : 'light'}
+      />
     </div>
   )
 }
