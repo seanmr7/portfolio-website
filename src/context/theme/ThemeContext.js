@@ -12,7 +12,7 @@ export const ThemeProvider = ({children}) => {
     }
   } else {
     initialState = {
-      theme: ''
+      theme: 'bumblebee'
     } 
   }
 
