@@ -15,11 +15,18 @@ function About() {
                 <img src={AboutImage} alt='Sean Riedl' className='px-5 pt-5 rounded-sm card-body' />
             </div>
             <div className='about-content max-w-3xl px-10 py-10 my-10 mx-10 shadow-xl rounded-sm md:my-0 lg:self-center'>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+              <p>Hi I'm Sean.</p>
+              <br />
+              
+              <p>I'm a mechanical engineer and a self-taught web developer. 
+                Currently I'm working as a plumbing designer, 
+                but I am looking to transition to doing web development full-time. 
+                Besides programming, I like to rock climb, cook, and watch TV</p>
+              {/* <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
                 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
                 Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
                 Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p> */}
             </div>
           </div>
         </div>

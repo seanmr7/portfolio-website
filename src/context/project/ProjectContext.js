@@ -22,6 +22,7 @@ export const ProjectProvider = ({children}) => {
     'members_only_project',
     'movie-list',
     'NYT-Article-Page',
+    'portfolio-website',
     'Recipe_Website',
     'task-list',
     'tic-tac-toe_JS',
