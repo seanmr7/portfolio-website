@@ -11,8 +11,23 @@ export const ProjectProvider = ({children}) => {
   const GITHUB_TOKEN = process.env.REACT_APP_GITHUB_TOKEN
   
   const demosList = [
-    'Loan-calculator',
+    'blog',
+    'book-library',
+    'fakebook',
+    'flickr-api-project',
+    'flight_booker',
+    'GitHub-User-Finder',
+    'Loan-Calulator',
+    'mailchimp-signup-form',
+    'members_only_project',
     'movie-list',
+    'NYT-Article-Page',
+    'Recipe_Website',
+    'task-list',
+    'tic-tac-toe_JS',
+    'trakCal',
+    'Weather-App',
+    'youtube_video_page'
   ]
 
   const [state, dispatch] = useReducer(projectReducer, initialState)
@@ -32,7 +47,7 @@ export const ProjectProvider = ({children}) => {
       if(demosList.includes(repo.name)) {
         repo.imageUrl = `${repo.name}.png`
       } else {
-        repo.imageUrl = 'placeholder.png'
+        repo.imageUrl = 'placeholder.jpeg'
       }
       return repo
     })
