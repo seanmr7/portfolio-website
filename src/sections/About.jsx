@@ -20,17 +20,8 @@ function About() {
               
               <p>I'm a mechanical engineer and a self-taught web developer. 
                 Currently I'm working as a plumbing designer, 
-                but I am looking to transition to doing web development full-time. 
-<<<<<<< HEAD
+                but I am looking to transition to doing web development full-time.
                 Besides programming, I like to rock climb, cook, and watch TV.</p>
-=======
-                Besides programming, I like to rock climb, cook, and watch TV</p>
-              {/* <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p> */}
->>>>>>> 76fc2a63dd2e10f920bb34fb446f22ae8fcfc3cf
             </div>
           </div>
         </div>
