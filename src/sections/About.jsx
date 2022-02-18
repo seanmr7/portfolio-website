@@ -15,7 +15,7 @@ function About() {
                 <img src={AboutImage} alt='Sean Riedl' className='px-5 pt-5 rounded-sm card-body' />
             </div>
             <div className='about-content max-w-3xl px-10 py-10 my-10 mx-10 shadow-xl rounded-sm md:my-0 lg:self-center'>
-              <p>Hi I'm Sean.</p>
+              <p>Hi I'm Sean</p>
               <br />
               
               <p>I'm a mechanical engineer and a self-taught web developer. 

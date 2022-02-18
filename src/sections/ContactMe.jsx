@@ -38,15 +38,12 @@ function ContactMe() {
           .then((result) => {
             toast.success('Message sent!', {
               position: 'top-center',
-              autoClose: 3000,
+              autoClose: 2200,
             })
           }, (err) => {
             console.log('Failed to send', err)
           })
-    toast.success('Message sent!', {
-      position: 'top-center',
-      autoClose: 2000,
-    })
+
     setFormData({
       ...formData,
       name: '',
