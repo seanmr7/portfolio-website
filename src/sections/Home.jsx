@@ -43,9 +43,9 @@ function Home() {
   return (
     <section id='home'>
       <main className="container mx-auto">
-        <div className='flex flex-col justify-center content-between home-section-div'>
+        <div className='flex flex-col justify-center content-between min-h-screen'>
           <div className='container image-container mx-auto flex justify-center my-7'>
-            <img src={monitorIcon} alt='Monitor with code on screen' className="home-section-img" />
+            <img src={monitorIcon} alt='Monitor with code on screen' className='min-w-1/2 md:min-w-1/4' />
           </div>
           <h1 className="flex justify-center text-5xl pb-5 Typewriter_wrapper">
             <Typewriter
