@@ -6,6 +6,7 @@ const ProjectContext = createContext()
 export const ProjectProvider = ({ children }) => {
   const initialState = {
     repos: [],
+    reposToDisplay: [],
     loading: true,
   }
   const GITHUB_TOKEN = process.env.REACT_APP_GITHUB_TOKEN
@@ -63,6 +64,10 @@ export const ProjectProvider = ({ children }) => {
       type: 'GET_REPOS',
       payload: dataWithImageUrl,
     })
+  }
+
+  const setReposToDisplay = () => {
+    
   }
 
   return (
