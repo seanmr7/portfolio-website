@@ -40,9 +40,10 @@ export const ProjectProvider = ({ children }) => {
     const response = await fetch(
       'https://api.github.com/users/seanmr7/repos?sort=pushed&per_page=100',
       {
-        headers: {
-          Authorization: `token: ${GITHUB_TOKEN}`,
-        },
+        method: 'GET',
+        headers: new Headers({
+          Authorization: `token ${GITHUB_TOKEN}`,
+        }),
       }
     )
 
