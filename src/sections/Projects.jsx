@@ -8,12 +8,15 @@ import SwiperSlideItem from '../components/SwiperSlideItem'
 // Import required swiper css
 import 'swiper/css'
 import 'swiper/css/navigation'
+import ProjectItem from '../components/ProjectItem'
 
 function Projects() {
   const { repos } = useContext(ProjectContext)
 
   formatReposNames(repos)
   sortRepos(repos)
+
+  const testLayout = repos.slice(0, 3)
 
   return (
     <section id='projects'>
@@ -23,17 +26,14 @@ function Projects() {
           style={{ minHeight: '45vh' }}>
           <h1 className='text-2xl my-6 mx-auto'>Projects</h1>
           <div className='container mb-8'>
-            <Swiper
-              modules={[Navigation]}
-              centeredSlides
-              slidesPerView={1}
-              navigation>
-              {repos.map((repo) => (
-                <SwiperSlide key={repo.id}>
-                  <SwiperSlideItem key={repo.id} repo={repo} />
-                </SwiperSlide>
-              ))}
-            </Swiper>
+            {testLayout.map((repo) => (
+              <ProjectItem key={repo.id} repo={repo} />
+            ))}
+            <div className='w-full text-center mb-14'>
+              <button className='btn btn-primary w-2/3 md:w-1/3'>
+                Load More
+              </button>
+            </div>
           </div>
         </div>
       </main>
