@@ -17,10 +17,11 @@ function LandingPage() {
 
   useEffect(() => {
     getRepos()
-    formatReposNames(repos)
-    sortRepos(repos)
     setThemeOnLoad(theme)
-  }, [getRepos, repos])
+  }, [])
+
+  formatReposNames(repos)
+  sortRepos(repos)
 
   return (
     <div>

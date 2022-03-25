@@ -16,7 +16,7 @@ function ProjectItem({
 
   return (
     <div
-      className={`card-body mx-auto w-screen mb-14 p-4 md:w-11/12 alternate-bg-${theme} rounded-md shadow-xl`}>
+      className={`card-body mx-auto w-screen mb-14 p-4 md:w-8/12 alternate-bg-${theme} rounded-md shadow-xl`}>
       <img
         src={process.env.PUBLIC_URL + `/images/${imageUrl}`}
         alt='Site demo'
