@@ -27,13 +27,9 @@ function Projects() {
       console.log(repos.slice(lastRepo, nextRepos))
       repos
         .slice(lastRepo, nextRepos)
-        .forEach((repo) =>
-          setReposToDisplay((prevState) => [...prevState, repo])
-        )
+        .forEach((repo) => setReposToDisplay((prevState) => [...prevState, repo]))
     }
   }
-
-  console.log(reposToDisplay)
 
   return (
     <section id='projects'>
@@ -47,9 +43,7 @@ function Projects() {
               return <ProjectItem key={repo.id} repo={repo} />
             })}
             <div className='w-full text-center mb-14'>
-              <button
-                className='btn btn-primary w-2/3 md:w-1/3'
-                onClick={loadMoreRepos}>
+              <button className='btn btn-primary w-2/3 md:w-1/3' onClick={loadMoreRepos}>
                 Load More
               </button>
             </div>

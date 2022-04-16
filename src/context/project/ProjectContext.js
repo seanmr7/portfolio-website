@@ -32,6 +32,7 @@ export const ProjectProvider = ({ children }) => {
     'Weather-App',
     'youtube_video_page',
     'otp-login',
+    'trakCal-FullStack',
   ]
 
   const [state, dispatch] = useReducer(projectReducer, initialState)
@@ -64,10 +65,6 @@ export const ProjectProvider = ({ children }) => {
       type: 'GET_REPOS',
       payload: dataWithImageUrl,
     })
-  }
-
-  const setReposToDisplay = () => {
-    
   }
 
   return (
