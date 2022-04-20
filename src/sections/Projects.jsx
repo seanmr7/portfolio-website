@@ -1,6 +1,7 @@
-import { useContext, useState, useEffect } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
+import { Suspense } from 'react/cjs/react.production.min'
 import ProjectContext from '../context/project/ProjectContext'
-import ProjectItem from '../components/ProjectItem'
+const ProjectItem = React.lazy(() => import('../components/ProjectItem'))
 
 function Projects() {
   const { repos } = useContext(ProjectContext)
@@ -24,7 +25,6 @@ function Projects() {
       const lastRepo = numberOfReposDisplayed
       const nextRepos = numberOfReposDisplayed + 3
       setnumberOfReposDisplayed((prevState) => prevState + 3)
-      console.log(repos.slice(lastRepo, nextRepos))
       repos
         .slice(lastRepo, nextRepos)
         .forEach((repo) => setReposToDisplay((prevState) => [...prevState, repo]))
@@ -33,23 +33,27 @@ function Projects() {
 
   return (
     <section id='projects'>
-      <main className='mx-auto'>
-        <div
-          className='container flex flex-col content-center justify-start'
-          style={{ minHeight: '45vh' }}>
-          <h1 className='text-2xl my-6 mx-auto'>Projects</h1>
-          <div className='container mb-8'>
-            {reposToDisplay.map((repo) => {
-              return <ProjectItem key={repo.id} repo={repo} />
-            })}
-            <div className='w-full text-center mb-14'>
-              <button className='btn btn-primary w-2/3 md:w-1/3' onClick={loadMoreRepos}>
-                Load More
-              </button>
+      <Suspense fallback={<div>Loading...</div>}>
+        <main className='mx-auto'>
+          <div
+            className='container flex flex-col content-center justify-start'
+            style={{ minHeight: '45vh' }}>
+            <h1 className='text-2xl my-6 mx-auto'>Projects</h1>
+            <div className='container mb-8'>
+              {reposToDisplay.map((repo) => {
+                return <ProjectItem key={repo.id} repo={repo} />
+              })}
+              <div className='w-full text-center mb-14'>
+                <button
+                  className='btn btn-primary w-2/3 md:w-1/3'
+                  onClick={loadMoreRepos}>
+                  Load More
+                </button>
+              </div>
             </div>
           </div>
-        </div>
-      </main>
+        </main>
+      </Suspense>
     </section>
   )
 }

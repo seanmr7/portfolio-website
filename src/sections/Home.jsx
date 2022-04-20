@@ -1,23 +1,22 @@
-import { useEffect, useState, useContext } from "react";
+import { useEffect, useState, useContext } from 'react'
 // import { themeChange } from "theme-change";
 import Typewriter from 'typewriter-effect'
 import Switch from 'react-switch'
 import monitorIcon from '../assets/images/laptopIcon.svg'
 import { FaMoon, FaSun } from 'react-icons/fa'
 import ThemeContext from '../context/theme/ThemeContext'
-import { changeTheme } from "../context/theme/ThemeActions";
+import { changeTheme } from '../context/theme/ThemeActions'
 
 function Home() {
   const { theme, dispatch } = useContext(ThemeContext)
-  
-  const [checked, setChecked] = useState(false)
-  
-  // Set themeChange to false, required for react project per documentation
 
+  const [checked, setChecked] = useState(false)
+
+  // Set themeChange to false, required for react project per documentation
 
   // Check if use has a theme stored and set toggle switch to correct side.
   useEffect(() => {
-    if(theme === 'dark') {
+    if (theme === 'dark') {
       setChecked(true)
     }
   }, [theme])
@@ -25,7 +24,7 @@ function Home() {
   // Slide toggle on click
   const onChange = (nextChecked) => {
     setChecked(nextChecked)
-    if(theme === 'bumblebee') {
+    if (theme === 'bumblebee') {
       dispatch({
         type: 'CHANGE_THEME',
         payload: 'dark',
@@ -42,15 +41,20 @@ function Home() {
 
   return (
     <section id='home'>
-      <main className="container mx-auto">
+      <main className='container mx-auto'>
         <div className='flex flex-col justify-center content-between min-h-screen'>
           <div className='container image-container mx-auto flex justify-center my-7'>
-            <img src={monitorIcon} alt='Monitor with code on screen' className='min-w-1/2 md:min-w-1/4' />
+            <img
+              src={monitorIcon}
+              alt='Monitor with code on screen'
+              className='min-w-1/2 md:min-w-1/4'
+            />
           </div>
-          <h1 className="flex justify-center text-5xl pb-5 Typewriter_wrapper">
+          <h1 className='flex justify-center text-5xl pb-5 Typewriter_wrapper'>
             <Typewriter
               onInit={(typerwriter) => {
-                typerwriter.typeString('Web Developer')
+                typerwriter
+                  .typeString('Web Developer')
                   .start()
                   .pauseFor(1200)
                   .deleteAll()
@@ -62,41 +66,44 @@ function Home() {
               }}
             />
           </h1>
-          <div className="flex justify-center items-start max-h-min">
-              <Switch 
-                onChange={onChange}
-                data-toggle-theme='dark,bumblebee'
-                data-act-class='ACTIVECLASS'
-                checked={checked}
-                handleDiameter={35}
-                height={35}
-                width={80}
-                className='react-switch'
-                offColor='#65C3C8'
-                onColor='#793EF9'
-                uncheckedIcon={
-                  <div style={{
+          <div className='flex justify-center items-start max-h-min'>
+            <Switch
+              onChange={onChange}
+              data-toggle-theme='dark,bumblebee'
+              data-act-class='ACTIVECLASS'
+              checked={checked}
+              handleDiameter={35}
+              height={35}
+              width={80}
+              className='react-switch'
+              offColor='#65C3C8'
+              onColor='#793EF9'
+              label='theme-toggle'
+              uncheckedIcon={
+                <div
+                  style={{
                     display: 'flex',
                     justifyContent: 'center',
                     alignItems: 'center',
                     height: '100%',
                     fontSize: 20,
                   }}>
-                    <FaMoon />
-                  </div>
-                }
-                checkedIcon={
-                  <div style={{
+                  <FaMoon />
+                </div>
+              }
+              checkedIcon={
+                <div
+                  style={{
                     display: 'flex',
                     justifyContent: 'center',
                     alignItems: 'center',
                     height: '100%',
                     fontSize: 20,
                   }}>
-                    <FaSun />
-                  </div>
-                }
-              />
+                  <FaSun />
+                </div>
+              }
+            />
           </div>
         </div>
       </main>
