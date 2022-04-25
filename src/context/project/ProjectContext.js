@@ -25,6 +25,7 @@ export const ProjectProvider = ({ children }) => {
     'NYT-Article-Page',
     'portfolio-website',
     'Recipe_Website',
+    'recipe-reducer',
     'restaurant-page',
     'task-list',
     'tic-tac-toe_JS',
@@ -54,9 +55,9 @@ export const ProjectProvider = ({ children }) => {
     // Add filepath for live projects with urls
     const dataWithImageUrl = data.map((repo) => {
       if (demosList.includes(repo.name)) {
-        repo.imageUrl = `${repo.name}.png`
+        repo.imageUrl = `${repo.name}.webp`
       } else {
-        repo.imageUrl = 'placeholder.jpeg'
+        repo.imageUrl = 'placeholder.webp'
       }
       return repo
     })
